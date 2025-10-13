@@ -1,0 +1,10 @@
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using eCommerce.Core.Entity;
+global using eCommerce.Core.IRepository;
+global using eCommerce.Core.DTO;
+global using eCommerce.Infrastructure.Repository;
+global using eCommerce.Infrastructure.DbContext;
+global using Microsoft.Extensions.Configuration;
+global using Npgsql;
+global using Dapper;
+global using System.Data;

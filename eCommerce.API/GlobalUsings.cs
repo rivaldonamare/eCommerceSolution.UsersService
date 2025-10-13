@@ -1,0 +1,9 @@
+﻿global using eCommerce.Infrastructure;
+global using eCommerce.Core;
+global using eCommerce.API.Middleware;
+global using Microsoft.AspNetCore.Mvc;
+global using eCommerce.Core.DTO;
+global using eCommerce.Core.IService;
+global using System.Text.Json.Serialization;
+global using eCommerce.Core.Mappers;
+global using FluentValidation.AspNetCore;

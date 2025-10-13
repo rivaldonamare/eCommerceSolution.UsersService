@@ -1,0 +1,10 @@
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using System.ComponentModel;
+global using eCommerce.Core.Entity;
+global using eCommerce.Core.DTO;
+global using eCommerce.Core.IRepository;
+global using eCommerce.Core.IService;
+global using eCommerce.Infrastructure.Service;
+global using AutoMapper;
+global using FluentValidation;
+global using eCommerce.Core.Validators;
