@@ -31,7 +31,9 @@ public class ApplicationUserRepository : IApplicationUserRepository
         var user = await _dapperDbContext.Connection.QueryFirstOrDefaultAsync<ApplicationUser>(query, new { Email = email, Password = password });
 
         if (user == null)
-            throw new Exception("User not found");
+        {
+            throw new InvalidOperationException("User not found");
+        }
         
         return user;
     }
