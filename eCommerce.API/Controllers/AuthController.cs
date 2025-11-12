@@ -11,6 +11,12 @@ public class AuthController : ControllerBase
         _applicationUserService = applicationUserService ?? throw new ArgumentNullException(nameof(applicationUserService));
     }
 
+    [HttpGet("ping")] // api/v1/auth/ping
+    public IActionResult Ping()
+    {
+        return Ok("Pong");
+    }
+
     [HttpPost("register")] // api/v1/auth/register
     public async Task<IActionResult> Register(RegisterRequestDTO registerRequestDTO)
     {
