@@ -37,4 +37,13 @@ public class ApplicationUserRepository : IApplicationUserRepository
         
         return user;
     }
+
+    public async Task<ApplicationUser?> GetUserByUserId(Guid userId)
+    {
+        string query = "SELECT * FROM public. \"ApplicationUsers\" WHERE \"UserId\" = @UserId";
+
+        var user = await _dapperDbContext.Connection.QueryFirstOrDefaultAsync<ApplicationUser>(query, new { UserId = userId });
+
+        return user;
+    }
 }

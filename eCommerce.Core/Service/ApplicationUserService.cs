@@ -10,6 +10,21 @@ public class ApplicationUserService : IApplicationUserService
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
+    public async Task<AuthenticationResponse> GetUserByUserId(Guid userId)
+    {
+        var user = await _applicationUserRepository.GetUserByUserId(userId);
+
+        if (user == null)
+        {
+            return new AuthenticationResponse
+            {
+                IsSuccess = false
+            };
+        }
+
+        return _mapper.Map<AuthenticationResponse>(user) with { Token = "Token", IsSuccess = true };
+    }
+
     public async Task<AuthenticationResponse?> Login(LoginRequestDTO loginRequest)
     {
         var user = await _applicationUserRepository.GetUserByEmailAndPassword(loginRequest.Email, loginRequest.Password);
